@@ -2,7 +2,7 @@
   --r-heading-font: "Inter";
   --r-main-font: "Inter";
 
-  --r-heading-font-weight: 850;
+  --r-heading-font-weight: 900;
   font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -96,6 +96,54 @@ dl.history dd {
   text-align: left;
 }
 
-#history {
-   --r-color
+.layout-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+
+footer {
+  position: absolute;
+  inset-inline: auto;
+  inset-block-end: 20px;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+section:has(.demo),
+section:has(footer) {
+  height: 100%;
+}
+
+section:has(.demo) .code [data-markdown],
+section:has(.demo) .code [data-markdown] .code-wrapper {
+  height: 100%;
+}
+
+dialog,
+.popover {
+  --r-main-color: black;
+  --r-heading-color: var(--r-main-color);
+  --r-main-font-size: 1rem;
+  font-size: var(--r-main-font-size);
+  background: white;
+  border: 1px solid color-mix(in srgb, black, transparent 40%);
+  border-radius: 5px;
+  box-shadow: 0 1rem 3rem 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+dialog button[command="close"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: none;
+  padding: 0;
+}
+
+dialog::backdrop {
+  background: color-mix(in srgb, #901234, transparent 25%);
 }

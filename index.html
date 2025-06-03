@@ -10,7 +10,19 @@
     <div class="reveal">
       <div class="slides">
         <section id="title">
-          <h1>You might not need that framework</h1>
+          <h1>
+            You might not<br />
+            need that<br />
+            framework
+          </h1>
+          <aside class="notes">
+            This past decade+ we've seen frontend frameworks come and go. We've
+            also seen the web platform become a lot more powerful, and we're now
+            at a place where we might not even need a framework anymore.
+          </aside>
+        </section>
+        <section id="title">
+          <h1>Going back to the basics</h1>
           <aside class="notes">
             This past decade+ we've seen frontend frameworks come and go. We've
             also seen the web platform become a lot more powerful, and we're now
@@ -18,11 +30,12 @@
           </aside>
         </section>
         <section>
-          <h1>Intro</h1>
+          <h1 style="--r-heading-font: monospace; text-transform: none">
+            /about
+          </h1>
           <p>Jesper Haug Karsrud</p>
-          <p>Senior fullstack engineer, tech lead, architect</p>
+          <p>Senior fullstack engineer, tech lead, solutions architect</p>
           <p>Loves the web platform</p>
-          <p>HTML5 WG Alumni</p>
           <aside class="notes">But first a quick introduction</aside>
         </section>
         <section
@@ -64,30 +77,109 @@
             Facebook open sourced React.js, and its component based approach
             sent a large part of the existing frontend JavaScript frameworks and
             the web platform itself spinning. Eventually other frameworks like
-            Svelte came along, alongside React meta frameworks like Next.js
+            Svelte came along, alongside React meta frameworks like Next.js. One
+            thing they all have in common are heavy build pipelines, and not
+            running the same code you wrote anywhere. Not on the server and
+            certainly not on the client.
           </aside>
         </section>
         <section>
           <h1>Today</h1>
           <h2 class="fragment">The web platform is really, really good!</h2>
-          <ul>
-            <li></li>
-          </ul>
-          <button command="show-modal" commandFor="dialog-1">Show modal</button>
-          <dialog id="dialog-1"><h1>This is a dialog</h1></dialog>
           <aside class="notes">
             So where are we today? While all these new JavaScript frameworks
-            popped up, the web platform has become really, really good!
+            popped up, the web platform has become really, really good! The
+            JavaScript frameworks that were considered "modern" 10 years ago are
+            still being used, but are definitely not modern anymore. Some of
+            them are even go out of their way to *not* use the platform's native
+            features. Want to submit a newsletter signup form with one field and
+            a button? Hook up this extremely heavy library for managing form
+            state, but don't use the native browser events, use a synthetic
+            event model is a remnant from when IE6 had a messed up event model,
+            and make sure everything is sent as JSON all the time. But there's
           </aside>
         </section>
         <section>
-          <h1>JavaScript</h1>
-        </section>
-        <section>
           <h1>HTML</h1>
+          <h2 class="fragment">The ultimate declarative language</h2>
+          <p class="fragment">SSR, SSG, Streaming out-of-the-box</p>
+
+          <aside class="notes">
+            HTML is the ultimate declarative language for describing content and
+            structure. The browsers makes sure they're forgiving to your
+            mistakes, and they do a *really* good job. You can even include
+            elements that the browser doesn't know about, and expand them into
+            functional elements using custom elements. It's also the language
+            that drives everything else on the web, so browsers are incredibly
+            fast at parsing and rendering the HTML that is downloaded from a
+            server somewhere.
+          </aside>
+        </section>
+        <section></section>
+        <section>
+          <h1>JavaScript - YAGNI*</h1>
+          <p>Modals</p>
+          <p>Custom dropdowns</p>
+          <p>Carousels</p>
+          <p>Scroll driven animations</p>
+          <p>View transitions</p>
+          <p>Scroll snapping</p>
+          <p>Color mixing</p>
+          <p>...and more</p>
+          <footer>* You ain't gonna need it</footer>
+        </section>
+        <section
+          data-background-gradient="linear-gradient(to right bottom, #0891f5, #00b0ff, #00c9f0, #00decf, #4eeea8, #95e378, #c8d456, #f2c04c, #fb904a, #f3615d, #d63976, #a22a8d)"
+        >
+          <section>
+            <h1>Modals</h1>
+          </section>
+          <section>
+            <div class="layout-2">
+              <div class="code">
+                <h1>Modals</h1>
+                <div data-markdown>
+                  <textarea data-template>
+                  ```html [2|3,7|10,11]
+                  <button 
+                    command="show-modal" 
+                    commandFor="dialog-1"
+                  >
+                    Show modal
+                  </button>
+                  <dialog id="dialog-1">
+                    <h1>This is a dialog</h1>
+                    <button 
+                      command="close" 
+                      commandFor="dialog-1"
+                    >&times;</button>
+                  </dialog>
+                  ```
+                </textarea
+                  >
+                </div>
+              </div>
+              <div class="demo">
+                <button command="show-modal" commandFor="dialog-1">
+                  Show modal
+                </button>
+                <dialog id="dialog-1">
+                  <p>I opened without any JavaScript!</p>
+                  <button command="close" commandFor="dialog-1">&times;</button>
+                </dialog>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h1>Dropdowns</h1>
+          </section>
         </section>
         <section>
           <h1>CSS</h1>
+        </section>
+        <section>
+          <h1>So, no framework then?</h1>
+          <p></p>
         </section>
       </div>
     </div>
