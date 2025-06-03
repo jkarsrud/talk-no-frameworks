@@ -1,4 +1,8 @@
 :root {
+  --r-heading-font: "Inter";
+  --r-main-font: "Inter";
+
+  --r-heading-font-weight: 850;
   font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -66,4 +70,32 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+dl.history {
+  margin: 0;
+  font-family: monospace;
+}
+
+.history:has(dt) > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+dl.history dt,
+dl.history dd {
+  padding-block: 0.5rem;
+}
+
+.history:has(dt) dt {
+  text-align: right;
+}
+
+.history:has(dt) dd {
+  text-align: left;
+}
+
+#history {
+   --r-color
 }
