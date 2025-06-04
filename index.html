@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>You might not need that framework</title>
   </head>
   <body>
     <div class="reveal">
@@ -117,27 +117,27 @@
         </section>
         <section></section>
         <section>
-          <h1>JavaScript - YAGNI*</h1>
+          <h1>JavaScript</h1>
+          <h4>You ain't gonna need it</h4>
           <p>Modals</p>
-          <p>Custom dropdowns</p>
+          <p>Popovers</p>
+          <p>Customizable select dropdowns</p>
           <p>Carousels</p>
           <p>Scroll driven animations</p>
           <p>View transitions</p>
           <p>Scroll snapping</p>
           <p>Color mixing</p>
           <p>...and more</p>
-          <footer>* You ain't gonna need it</footer>
         </section>
         <section
           data-background-gradient="linear-gradient(to right bottom, #0891f5, #00b0ff, #00c9f0, #00decf, #4eeea8, #95e378, #c8d456, #f2c04c, #fb904a, #f3615d, #d63976, #a22a8d)"
         >
           <section>
-            <h1>Modals</h1>
+            <h1></h1>
           </section>
           <section>
             <div class="layout-2">
               <div class="code">
-                <h1>Modals</h1>
                 <div data-markdown>
                   <textarea data-template>
                   ```html [2|3,7|10,11]
@@ -171,7 +171,83 @@
             </div>
           </section>
           <section>
-            <h1>Dropdowns</h1>
+            <h1>Popovers</h1>
+          </section>
+          <section>
+            <div class="layout-2">
+              <div>
+                <h1>Popover #1</h1>
+                <div data-markdown>
+                  <textarea data-template>
+                    ```html [1|]
+                    <details class="popover">
+                      <summary>Open popover</summary>
+                      <div>
+                        <p>Popover elements are a common UI pattern</p>
+                      </div>
+                    </details>
+                    ```
+                    ```css[]
+                    details.popover summary {
+                      list-style: none;
+                    }
+                    
+                    details.popover > div {
+                      max-width: 56rem;
+                      margin-block-start: .5rem;
+                    }
+                    ```
+                </textarea
+                  >
+                </div>
+              </div>
+              <div class="demo">
+                <details class="popover-demo">
+                  <summary>Open popover</summary>
+                  <div class="popover">
+                    <p>Popover elements are a common UI pattern</p>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="layout-2">
+              <div>
+                <h1>Popover #2</h1>
+                <div data-markdown>
+                  <textarea data-template>
+                    ```html [1|]
+                    <details class="popover">
+                      <summary>Open popover</summary>
+                      <div>
+                        <p>Popover elements are a common UI pattern</p>
+                      </div>
+                    </details>
+                    ```
+                    ```css[]
+                    details.popover summary {
+                      list-style: none;
+                    }
+                    
+                    details.popover > div {
+                      max-width: 56rem;
+                      margin-block-start: .5rem;
+                    }
+                    ```
+                </textarea
+                  >
+                </div>
+              </div>
+              <div class="demo" id="popover-demo-2">
+                <button type="button" popovertarget="popover-2">
+                  Open popover
+                </button>
+                <div id="popover-2" popover>
+                  Popovers are still a common UI pattern
+                </div>
+              </div>
+            </div>
           </section>
         </section>
         <section>
