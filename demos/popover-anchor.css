@@ -1,0 +1,32 @@
+* {
+  box-model: border-box;
+}
+
+body {
+  display: flex;
+  font-family: "Inter";
+  justify-content: center;
+  font-size: 200%;
+}
+
+button[popovertarget] {
+  border-radius: 1rem;
+  padding: 0.5rem;
+  font-family: inherit;
+  color: black;
+  border: 1px solid black;
+  background: color-mix(in srgb, black, transparent 90%);
+  font-size: 2rem;
+}
+
+[popover] {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  inset-block-start: anchor(end);
+  justify-self: anchor-center;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 0;
+  margin-block-start: 0.5rem;
+  max-width: 300px;
+}

@@ -103,6 +103,7 @@
           <h1>HTML</h1>
           <h2 class="fragment">The ultimate declarative language</h2>
           <p class="fragment">SSR, SSG, Streaming out-of-the-box</p>
+          <p class="fragment">Declarative behavior</p>
 
           <aside class="notes">
             HTML is the ultimate declarative language for describing content and
@@ -112,20 +113,25 @@
             functional elements using custom elements. It's also the language
             that drives everything else on the web, so browsers are incredibly
             fast at parsing and rendering the HTML that is downloaded from a
-            server somewhere.
+            server somewhere. A lot of HTML elements have also gotten very good
+            at declaratively defining behavior. Just think of form controls,
           </aside>
         </section>
-        <section></section>
+        <section>
+          <h1>CSS</h1>
+
+          <aside class="notes">CSS has</aside>
+        </section>
         <section>
           <h1>JavaScript</h1>
           <h4>You ain't gonna need it</h4>
-          <p>Modals</p>
-          <p>Popovers</p>
+          <p>Modals & popovers</p>
+          <p>Accordions</p>
           <p>Customizable select dropdowns</p>
           <p>Carousels</p>
           <p>Scroll driven animations</p>
-          <p>View transitions</p>
           <p>Scroll snapping</p>
+          <p>Anchor positioning</p>
           <p>Color mixing</p>
           <p>...and more</p>
         </section>
@@ -133,11 +139,41 @@
           data-background-gradient="linear-gradient(to right bottom, #0891f5, #00b0ff, #00c9f0, #00decf, #4eeea8, #95e378, #c8d456, #f2c04c, #fb904a, #f3615d, #d63976, #a22a8d)"
         >
           <section>
-            <h1></h1>
+            <h1>Modals</h1>
+            <aside class="notes">
+              Modal dialogs are a very common UI pattern, but it's notoriously
+              difficult to get right from an accessibility and usability
+              perspective
+            </aside>
+          </section>
+          <section>
+            <h1>BYOD</h1>
+            <div class="fragment">
+              <p>
+                Add a <code>position: fixed</code> div with
+                <code>z-index: 10000</code>
+              </p>
+              <p>Add a backdrop div</p>
+              <p>Add a content div</p>
+              <p>Center on page</p>
+              <p>🎉</p>
+            </div>
+            <p class="fragment">But wait... there's more!</p>
+            <div class="fragment">
+              <p>Render all other content inert</p>
+              <p>Trap focus</p>
+              <p>Restore focus</p>
+              <p>ARIA</p>
+              <p><kbd>ESC</kbd> key support</p>
+              <p>Click-outside</p>
+            </div>
+            <aside class="notes"></aside>
           </section>
           <section>
             <div class="layout-2">
               <div class="code">
+                <h1>Modal</h1>
+                <p>Using &lt;dialog&gt; and invokers</p>
                 <div data-markdown>
                   <textarea data-template>
                   ```html [2|3,7|10,11]
@@ -157,6 +193,10 @@
                   ```
                 </textarea
                   >
+                  <p class="fragment">
+                    Browser support for Invoker Commands is getting better, but
+                    not on mobile (yet)
+                  </p>
                 </div>
               </div>
               <div class="demo">
@@ -193,19 +233,21 @@
                     }
                     
                     details.popover > div {
-                      max-width: 56rem;
                       margin-block-start: .5rem;
                     }
                     ```
                 </textarea
                   >
+                  <div class="note">
+                    <p>Well supported in all browsers</p>
+                  </div>
                 </div>
               </div>
               <div class="demo">
                 <details class="popover-demo">
                   <summary>Open popover</summary>
                   <div class="popover">
-                    <p>Popover elements are a common UI pattern</p>
+                    <p>Popovers is a common UI pattern</p>
                   </div>
                 </details>
               </div>
@@ -215,24 +257,21 @@
             <div class="layout-2">
               <div>
                 <h1>Popover #2</h1>
+                <p>Using popover and anchor positioning</p>
                 <div data-markdown>
                   <textarea data-template>
-                    ```html [1|]
-                    <details class="popover">
-                      <summary>Open popover</summary>
-                      <div>
-                        <p>Popover elements are a common UI pattern</p>
-                      </div>
-                    </details>
+                    ```html[|1|4|]
+                    <button popovertarget="popover">
+                      Open popover
+                    </button>
+                    <div id="popover" popover>
+                      Popovers is still a common UI pattern
+                    </div>
                     ```
                     ```css[]
-                    details.popover summary {
-                      list-style: none;
-                    }
-                    
-                    details.popover > div {
-                      max-width: 56rem;
-                      margin-block-start: .5rem;
+                    [popover] {
+                      inset-block-start: anchor(end);
+                      justify-self: anchor-center;
                     }
                     ```
                 </textarea
@@ -240,12 +279,7 @@
                 </div>
               </div>
               <div class="demo" id="popover-demo-2">
-                <button type="button" popovertarget="popover-2">
-                  Open popover
-                </button>
-                <div id="popover-2" popover>
-                  Popovers are still a common UI pattern
-                </div>
+                <iframe src="/demos/popover-anchor.html"></iframe>
               </div>
             </div>
           </section>
