@@ -14,7 +14,7 @@ import Zoom from "reveal.js/plugin/zoom/zoom.esm.js";
 const Deck = new Reveal({ plugins: [Markdown, SpeakerNotes, Highlight, Zoom] });
 
 Deck.initialize({
-  controls: true,
+  controls: false,
   progress: false,
   hash: true,
   width: 1920,

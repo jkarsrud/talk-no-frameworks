@@ -13,3 +13,19 @@ background-image: linear-gradient(
   #00a9e7,
   #01a3e7
 );
+
+background-image: linear-gradient(
+  to right top,
+  #01a3e7,
+  #19a0e6,
+  #279ce6,
+  #3299e4,
+  #3c95e3,
+  #4492e2,
+  #4c8ee0,
+  #538bde,
+  #5b87dc,
+  #6283d9,
+  #697ed6,
+  #707ad3
+);

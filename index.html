@@ -183,12 +183,12 @@
           <h1>JavaScript</h1>
           <h4>You ain't gonna need it (as much)</h4>
           <p class="fragment">Modals & popovers</p>
+          <p class="fragment">Anchor positioning</p>
           <p class="fragment">Accordions</p>
           <p class="fragment">Customizable select dropdowns</p>
-          <p class="fragment">Carousels</p>
+          <p class="fragment">View transitions</p>
           <p class="fragment">Scroll driven animations</p>
           <p class="fragment">Scroll snapping</p>
-          <p class="fragment">Anchor positioning</p>
           <p class="fragment">Color mixing</p>
           <p class="fragment">...and so much more</p>
           <aside class="notes">
@@ -200,16 +200,16 @@
             <p>I'm not going to go into *every* single</p>
           </aside>
         </section>
-        <section data-background-color="#00bde3">
-          <section>
-            <h1>Modals</h1>
+        <section>
+          <section data-background-color="#00bde3">
+            <h1>Modal dialogs</h1>
             <aside class="notes">
               Modal dialogs are a very common UI pattern, but it's notoriously
               difficult to get right from an accessibility and usability
               perspective
             </aside>
           </section>
-          <section>
+          <section data-background-color="#00b9e4">
             <h1>BYOD</h1>
             <div class="fragment">
               <p>
@@ -232,14 +232,14 @@
             </div>
             <aside class="notes"></aside>
           </section>
-          <section>
+          <section data-background-color="#00b4e5">
             <div class="layout-2">
               <div class="code">
                 <h1>Modal</h1>
                 <p>Using &lt;dialog&gt; and invokers</p>
                 <div data-markdown>
                   <textarea data-template>
-                  ```html [2|3,7|10,11]
+                  ```html [|2|3,7|10,11|]
                   <button 
                     command="show-modal" 
                     commandFor="dialog-1"
@@ -273,10 +273,20 @@
               </div>
             </div>
           </section>
-          <section>
+          <section data-background-color="#00aee6">
             <h1>Popover</h1>
+            <aside class="notes">
+              <p>
+                Popovers are an equally common UI pattern - it might even be
+                more used than modal dialogs.
+              </p>
+              <p>
+                There's new ways of building popovers that are more accessible
+                and easier to implement than before.
+              </p>
+            </aside>
           </section>
-          <section>
+          <section data-background-color="#00aee6">
             <div class="layout-2">
               <div>
                 <h1>Popover #1</h1>
@@ -320,7 +330,7 @@
               While it looks like a popover, it doesn't actually use
             </aside>
           </section>
-          <section>
+          <section data-background-color="#00a9e7">
             <div class="layout-2">
               <div>
                 <h1>Popover #2</h1>
@@ -350,20 +360,31 @@
               </div>
             </div>
           </section>
-          <section>
+          <section data-background-color="#01a3e7">
             <div class="layout-2">
               <div class="code">
                 <h1>Accordion</h1>
                 <div data-markdown>
                   <textarea data-template>
-                Using `details` + `summary`
-                ```
-```
-</textarea
-                  >
+                    Using `details` + `summary`
+                    ```html[|1|]
+                    <details name="accordion">
+                      <summary>Pharetra convallis posuere.</summary>
+                      <p>Quam viverra orci sagittis eu volutpat.</p>
+                    </details>
+                    <details name="accordion">
+                      <summary>Amet massa vitae?</summary>
+                      <p>Elementum, nibh tellus molestie nunc?</p>
+                    </details>
+                    <details name="accordion">
+                      <summary>Sodales ut etiam?</summary>
+                      <p>Accumsan sit amet nulla facilisi morbi tempus iaculis.</p>
+                    </details>
+                    ```
+                  </textarea>
                 </div>
               </div>
-              <div class="demo">
+              <div class="demo accordion" style="color: black;">
                 <details name="accordion">
                   <summary>Pharetra convallis posuere.</summary>
                   <p>Quam viverra orci sagittis eu volutpat.</p>
@@ -379,7 +400,7 @@
               </div>
             </div>
           </section>
-          <section>
+          <section data-background-color="#19a0e6">
             <div class="layout-2">
               <div class="code">
                 <h1><code>&lt;select&gt;</code></h1>
@@ -414,10 +435,9 @@
               </div>
             </div>
           </section>
-          <section>
+          <section data-background-color="#279ce6">
             <div class="layout-3-1">
-              <div class="code">                
-                
+              <div class="code">
                 <h1>Currency picker</h1>
                 <div data-markdown>
                   <textarea data-template>
@@ -433,6 +453,7 @@
                           <div class="currency-short">EUR</div>
                           <div class="currency-long">Euro</div>
                         </div>
+                        <div class="symbol" aria-hidden="true">€</div>
                       </option>
                     </select>
                     ```
@@ -549,15 +570,48 @@
                     ```
                   </textarea>
                 </div>
+                <p>
+                  <small
+                    >Cemo courtesy of Una Kravets
+                    (https://codepen.io/una/pen/MWMmYxb)</small
+                  >
+                </p>
               </div>
               <div class="demo">
                 <iframe src="/demos/currency-select.html"></iframe>
               </div>
             </div>
           </section>
+          <section data-background-color="#3299e4">
+            <div class="layout-2">
+              <div class="code">
+                <h1>View transitions</h1>
+                <p>Cross document view transitions</p>
+                <div data-markdown>
+                  <textarea data-template>
+                    ```css
+                    @view-transition {
+                      navigation: auto;
+                    }
+                    ```
+                  </textarea>
+                </div>
+              </div>
+              <div class="demo" style="height: 100%">
+                <iframe src="/demos/view-transitions/page1.html"></iframe>
+              </div>
+            </div>
+          </section>
+          <section data-background-color="#3c95e3">
+            <h1>Complex transitions</h1>
+            <iframe
+              style="width: 100%; height: 60vh"
+              src="https://view-transitions.chrome.dev/stack-navigator/mpa/"
+            ></iframe>
+            <p>https://view-transitions.chrome.dev/stack-navigator/mpa/</p>
+          </section>
         </section>
-
-        <section>
+        <section data-background-color="#4492e2">
           <h1>No framework? Maybe.</h1>
           <p class="fragment">Browser support</p>
           <p class="fragment">Not always your choice</p>
@@ -577,6 +631,9 @@
               native web platform that we have.
             </p>
           </aside>
+        </section>
+        <section data-background-color="#4c8ee0">
+          <h1>Questions?</h1>
         </section>
       </div>
     </div>
