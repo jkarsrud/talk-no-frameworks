@@ -15,7 +15,7 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section id="title">
+        <section id="title" data-background="#4cd7d0">
           <h1>
             You might not<br />
             need that<br />
@@ -27,27 +27,31 @@
             at a place where we might not even need a framework anymore.
           </aside>
         </section>
-        <section id="title">
-          <h1>Going back to the basics</h1>
-          <aside class="notes">
-            This past decade+ we've seen frontend frameworks come and go. We've
-            also seen the web platform become a lot more powerful, and we're now
-            at a place where we might not even need a framework anymore.
-          </aside>
-        </section>
-        <section>
+        <section data-background="#3dd3d4" id="about">
           <h1 style="--r-heading-font: monospace; text-transform: none">
             /about
           </h1>
           <p>Jesper Haug Karsrud</p>
-          <p>Senior fullstack engineer, tech lead, solutions architect</p>
-          <p>Loves the web platform</p>
-          <aside class="notes">But first a quick introduction</aside>
+          <p>
+            Senior fullstack engineer, serverless enthuisast, tech lead,
+            solutions architect
+          </p>
+          <p>Loves the web platform ❤️</p>
+          <div style="margin-top: 5rem; --r-link-color: black">
+            <p>🌐 <a href="https://jkarsrud.com">jkarsrud.com</a></p>
+            <p>
+              🐘 <a href="mstdn.social/@jkarsrud">@jkarsrud@mstdn.social</a>
+            </p>
+          </div>
+          <aside class="notes">
+            <p>But first a quick introduction.</p>
+            <p></p>
+          </aside>
         </section>
-        <section
+        <!--
           data-background-gradient="linear-gradient(to bottom, #2ff3e0, #00e7f4, #00d9ff, #2bc9ff, #68b7ff, #97a9ff, #c996f6, #f480d8, #ff74b0, #ff7484, #ff805a, #f29133)"
-          id="history"
-        >
+          -->
+        <section data-background-color="#2ecfd8" id="history">
           <h1>Brief history</h1>
           <dl class="history">
             <div class="fragment">
@@ -76,74 +80,127 @@
             </div>
           </dl>
           <aside class="notes">
-            It's been almost 20 years since the release of the library that in
-            many ways popularised JavaScript and turned it into what it is
-            today. A few years later, we started seeing frameworks pop up, and a
-            new era of the frontend began. 7 years after the launch of jQuery,
-            Facebook open sourced React.js, and its component based approach
-            sent a large part of the existing frontend JavaScript frameworks and
-            the web platform itself spinning. Eventually other frameworks like
-            Svelte came along, alongside React meta frameworks like Next.js. One
-            thing they all have in common are heavy build pipelines, and not
-            running the same code you wrote anywhere. Not on the server and
-            certainly not on the client.
+            <p>
+              Let's look at a brief history of clientside libraries and
+              frameworks
+            </p>
+            <p>
+              It's been almost 20 years since the release of the library that in
+              many ways popularised JavaScript and turned it into what it is
+              today. A few years later, we started seeing frameworks pop up, and
+              a new era of the frontend began.
+            </p>
+            <p>
+              7 years after the launch of jQuery, Facebook open sourced
+              React.js, and its component based approach sent a large part of
+              the existing frontend JavaScript frameworks and the web platform
+              itself spinning. Eventually other frameworks like Svelte came
+              along, alongside React meta frameworks like Next.js.
+            </p>
+            <p>
+              One thing they all have in common are heavy build pipelines, and
+              not running the same code you wrote anywhere. Not on the server
+              and certainly not on the client.
+            </p>
           </aside>
         </section>
-        <section>
+        <section data-background-color="#1ecbdc" id="today">
           <h1>Today</h1>
           <h2 class="fragment">The web platform is really, really good!</h2>
           <aside class="notes">
-            So where are we today? While all these new JavaScript frameworks
-            popped up, the web platform has become really, really good! The
-            JavaScript frameworks that were considered "modern" 10 years ago are
-            still being used, but are definitely not modern anymore. Some of
-            them are even go out of their way to *not* use the platform's native
-            features. Want to submit a newsletter signup form with one field and
-            a button? Hook up this extremely heavy library for managing form
-            state, but don't use the native browser events, use a synthetic
-            event model is a remnant from when IE6 had a messed up event model,
-            and make sure everything is sent as JSON all the time. But there's
+            <p>
+              So where are we today? While all these new JavaScript frameworks
+              popped up, the web platform has become really, really good!
+            </p>
+            <p>
+              The JavaScript frameworks that were considered "modern" 10 years
+              ago are still being used heavily, but are definitely not that
+              modern anymore. They're still doing a lot of work that they need
+              to do in order to
+            </p>
+            <p>
+              Some of them are even go out of their way to *not* use the
+              platform's native features. Want to submit a newsletter signup
+              form with one field and a button? Hook up this extremely heavy
+              library for managing form state, but don't use the native browser
+              events, use a synthetic event model is a remnant from when IE6 had
+              a messed up event model, and make sure everything is sent as JSON
+              all the time. But there's
+            </p>
           </aside>
         </section>
-        <section>
-          <h1>HTML</h1>
-          <h2 class="fragment">The ultimate declarative language</h2>
-          <p class="fragment">SSR, SSG, Streaming out-of-the-box</p>
-          <p class="fragment">Declarative behavior</p>
-
+        <section data-background-color="#0ec6df" id="html-css">
+          <div class="layout-2">
+            <div>
+              <h1>HTML</h1>
+              <h2 class="fragment">The ultimate declarative language</h2>
+              <p class="fragment">SSR, SSG, Streaming out-of-the-box</p>
+              <p class="fragment">Declarative behavior</p>
+            </div>
+            <div>
+              <h1 class="fragment">CSS</h1>
+              <h2 class="fragment">Love the cascade</h2>
+              <p class="fragment"></p>
+            </div>
+          </div>
           <aside class="notes">
-            HTML is the ultimate declarative language for describing content and
-            structure. The browsers makes sure they're forgiving to your
-            mistakes, and they do a *really* good job. You can even include
-            elements that the browser doesn't know about, and expand them into
-            functional elements using custom elements. It's also the language
-            that drives everything else on the web, so browsers are incredibly
-            fast at parsing and rendering the HTML that is downloaded from a
-            server somewhere. A lot of HTML elements have also gotten very good
-            at declaratively defining behavior. Just think of form controls,
+            <p>
+              HTML is the ultimate declarative language for describing content
+              and structure. The browsers makes sure they're forgiving to your
+              mistakes, and they do a *really* good job.
+            </p>
+            <p>You get all the buzzword for free!</p>
+            <p>
+              You can even include elements that the browser doesn't know about,
+              and expand them into functional elements using custom elements.
+            </p>
+            <p>
+              It's also the language that drives everything else on the web, so
+              browsers are incredibly fast at parsing and rendering the HTML
+              that is downloaded from a server somewhere. A lot of HTML elements
+              have also gotten very good at declaratively defining behavior.
+              Just think about how easy it is to build basic clientside form
+              validation for instance? Unless you need to do some custom stuff,
+              you can get far by simply utilizing HTML.
+            </p>
+
+            <p>
+              CSS has always been a powerful language, but in recent years it
+              has gained serious super powers!
+            </p>
+            <p>
+              Combining the newer declarative behaviors available in HTML with
+              the new CSS super powers, we can do some really cool stuff with
+              very little code!
+            </p>
+            <p>
+              Tailwind is great, but that doesn't mean it should be used *for
+              everything*
+            </p>
           </aside>
         </section>
-        <section>
-          <h1>CSS</h1>
-
-          <aside class="notes">CSS has</aside>
-        </section>
-        <section>
+        <section id="javascript" data-background-color="#00c2e1">
           <h1>JavaScript</h1>
-          <h4>You ain't gonna need it</h4>
-          <p>Modals & popovers</p>
-          <p>Accordions</p>
-          <p>Customizable select dropdowns</p>
-          <p>Carousels</p>
-          <p>Scroll driven animations</p>
-          <p>Scroll snapping</p>
-          <p>Anchor positioning</p>
-          <p>Color mixing</p>
-          <p>...and more</p>
+          <h4>You ain't gonna need it (as much)</h4>
+          <p class="fragment">Modals & popovers</p>
+          <p class="fragment">Accordions</p>
+          <p class="fragment">Customizable select dropdowns</p>
+          <p class="fragment">Carousels</p>
+          <p class="fragment">Scroll driven animations</p>
+          <p class="fragment">Scroll snapping</p>
+          <p class="fragment">Anchor positioning</p>
+          <p class="fragment">Color mixing</p>
+          <p class="fragment">...and so much more</p>
+          <aside class="notes">
+            <p>
+              Combining some of the latest HTML and CSS will allow us to build
+              accessible, cross browser solutions without needing to use
+              JavaScript at all, or at least a lot less than before.
+            </p>
+            <p>I'm not going to go into *every* single</p>
+          </aside>
         </section>
-        <section
-          data-background-gradient="linear-gradient(to right bottom, #0891f5, #00b0ff, #00c9f0, #00decf, #4eeea8, #95e378, #c8d456, #f2c04c, #fb904a, #f3615d, #d63976, #a22a8d)"
-        >
+        <section data-background-color="#00bde3">
           <section>
             <h1>Modals</h1>
             <aside class="notes">
@@ -217,7 +274,7 @@
             </div>
           </section>
           <section>
-            <h1>Popovers</h1>
+            <h1>Popover</h1>
           </section>
           <section>
             <div class="layout-2">
@@ -225,6 +282,7 @@
                 <h1>Popover #1</h1>
                 <div data-markdown>
                   <textarea data-template>
+                    Using `<details>`+`<summary>`
                     ```html [1|]
                     <details class="popover">
                       <summary>Open popover</summary>
@@ -258,14 +316,17 @@
                 </details>
               </div>
             </div>
+            <aside class="notes">
+              While it looks like a popover, it doesn't actually use
+            </aside>
           </section>
           <section>
             <div class="layout-2">
               <div>
                 <h1>Popover #2</h1>
-                <p>Using popover and anchor positioning</p>
                 <div data-markdown>
                   <textarea data-template>
+                    Using `popover` attribute and anchor positioning
                     ```html[|1|4|]
                     <button popovertarget="popover">
                       Open popover
@@ -289,13 +350,66 @@
               </div>
             </div>
           </section>
+          <section>
+            <div class="layout-2">
+              <div class="code">
+                <h1>Accordion</h1>
+                <div data-markdown>
+                  <textarea data-template>
+                Using `details` + `summary`
+                ```
+```
+</textarea
+                  >
+                </div>
+              </div>
+              <div class="demo">
+                <details name="accordion">
+                  <summary>Pharetra convallis posuere.</summary>
+                  <p>Quam viverra orci sagittis eu volutpat.</p>
+                </details>
+                <details name="accordion">
+                  <summary>Amet massa vitae?</summary>
+                  <p>Elementum, nibh tellus molestie nunc?</p>
+                </details>
+                <details name="accordion">
+                  <summary>Sodales ut etiam?</summary>
+                  <p>Accumsan sit amet nulla facilisi morbi tempus iaculis.</p>
+                </details>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="layout-2">
+              <div class="code">
+                <h1>Custom <code>&lt;select&gt;</code></h1>
+                <p></p>
+              </div>
+              <div class="demo"></div>
+            </div>
+          </section>
         </section>
+
         <section>
-          <h1>CSS</h1>
-        </section>
-        <section>
-          <h1>So, no framework then?</h1>
-          <p></p>
+          <h1>No framework? Maybe.</h1>
+          <p class="fragment">Browser support</p>
+          <p class="fragment">Not always your choice</p>
+          <p class="fragment">Use the platform where possible</p>
+          <aside class="notes">
+            <p>
+              Maybe. Browser support isn't great for everything you've seen
+              today. The whole presentation has run in Chrome Canary just to
+              make sure it would all work. That doesn't mean it won't get there
+              at some point though.
+            </p>
+            <p>
+              I'll leave that up to you. There's still going to be benefits to
+              using some type of framework, but maybe we should ask ourselves if
+              it's really necessary to start with a given framework in 2025, or
+              if we can solve a lot of the problems we have simply by using the
+              native web platform that we have.
+            </p>
+          </aside>
         </section>
       </div>
     </div>
