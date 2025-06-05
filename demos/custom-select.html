@@ -1,0 +1,29 @@
+<style>
+  select {
+    max-width: fit-content;
+  }
+  .demo-select,
+  .demo-select::picker(select) {
+    appearance: base-select;
+  }
+
+  .demo-select::picker(select) {
+    border-radius: 0.5rem;
+    padding: 0;
+    box-shadow: 0px 12.8px 28.8px rgba(0, 0, 0, 0.13),
+      0px 0px 9.2px rgba(0, 0, 0, 0.11);
+    border: 1px solid #ececec;    
+  }
+</style>
+<div style="display: flex; flex-direction: column; gap: 4rem">
+  <select style="font-size: 150%">
+    <option value="no">Norway</option>
+    <option value="se">Sweden</option>
+    <option value="dk">Denmark</option>
+  </select>
+  <select class="demo-select">
+    <option value="no">Norway</option>
+    <option value="se">Sweden</option>
+    <option value="dk">Denmark</option>
+  </select>
+</div>
